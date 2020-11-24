@@ -1,41 +1,28 @@
 ﻿using System;
+using System.Linq;
 
 namespace FizzBuzzLab
 {
     public class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
-
             var p = new Program();
-            for (int i = 0; i < 100; i++)
-            {
-                Console.WriteLine(p.FizzBuzz(i));
-            }
-        }
 
-        public string FizzBuzz(int number)
+            foreach (var n in Enumerable.Range(1, 200))
+                Console.WriteLine(p.FizzBuzz(n));
+        }
+        private bool Mod0(int a, int b) => a % b == 0;
+        public string Answer = "Answer to the Ultimate Question of Life, the Universe, and Everything";
+
+        public string FizzBuzz(int n)
         {
-            if(number % 3 == 0 && number % 5 == 0)
-            {
-                return "FizzBuzz";
-            }
-            else if (number == 42)
-            {
-                return "Answer to the Ultimate Question of Life, the Universe, and Everything";
-            }
-            else if(number % 3 == 0)
-            {
-                return "Fizz";
-            }
-            else if(number % 5 == 0)
-            {
-                return "Buzz";
-            }
-            else
-            {
-                return number.ToString();
-            }
+            if (n == 42)     return Answer;
+            if (Mod0(n, 15)) return "FizzBuzz";
+            if (Mod0(n, 3))  return "Fizz";
+            if (Mod0(n, 5))  return "Buzz";
+
+            return n.ToString();
         }
     }
 }
