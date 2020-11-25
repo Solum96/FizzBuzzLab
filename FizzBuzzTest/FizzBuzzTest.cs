@@ -21,6 +21,7 @@ namespace FizzBuzzTest
             var res5 = p.FizzBuzz(18);
             var res6 = p.FizzBuzz(25);
             var res7 = p.FizzBuzz(90);
+            var res8 = p.FizzBuzz(84);
 
             //Assert
             Assert.AreEqual("Fizz", res1);
@@ -31,6 +32,7 @@ namespace FizzBuzzTest
             Assert.AreEqual("Fizz", res5);
             Assert.AreEqual("Buzz", res6);
             Assert.AreEqual("FizzBuzz", res7);
+            Assert.AreNotEqual("Answer to the Ultimate Question of Life, the Universe, and Everything", res8);
         }
     }
 }
