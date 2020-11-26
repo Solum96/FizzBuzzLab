@@ -17,10 +17,17 @@ namespace FizzBuzzLab
 
         public string FizzBuzz(int n)
         {
-            if (n == 42)     return Answer;
-            if (Mod0(n, 15)) return "FizzBuzz";
-            if (Mod0(n, 3))  return "Fizz";
-            if (Mod0(n, 5))  return "Buzz";
+            if (n == 42)     
+                return Answer;
+            
+            if (Mod0(n, 3) && Mod0(n, 5)) 
+                return "FizzBuzz";
+
+            if (Mod0(n, 3))  
+                return "Fizz";
+
+            if (Mod0(n, 5))  
+                return "Buzz";
 
             return n.ToString();
         }

@@ -7,32 +7,61 @@ namespace FizzBuzzTest
     public class FizzBuzz
     {
         [TestMethod]
-        public void FizzBuzzTest()
+        public void FizzTest()
         {
-            //Arrange
+            // Arrange
             var p = new Program();
 
-            //Act
+            // Act
             var res1 = p.FizzBuzz(3);
-            var res2 = p.FizzBuzz(5);
-            var res3 = p.FizzBuzz(15);
+            var res2 = p.FizzBuzz(18);
+
+            // Assert
+            Assert.AreEqual("Fizz", res1);
+            Assert.AreEqual("Fizz", res2);
+        }
+
+        [TestMethod]
+        public void BuzzTest()
+        {
+            // Arrange
+            var p = new Program();
+
+            // Act
+            var res1 = p.FizzBuzz(5);
+            var res2 = p.FizzBuzz(25);
+
+            // Assert
+            Assert.AreEqual("Buzz", res1);
+            Assert.AreEqual("Buzz", res2);
+        }
+
+        [TestMethod]
+        public void FizzBuzzTest()
+        {
+            // Arrange
+            var p = new Program();
+
+            // Act
+            var res1 = p.FizzBuzz(15);
+            var res2 = p.FizzBuzz(90);
+
+            // Assert
+            Assert.AreEqual("FizzBuzz", res1);
+            Assert.AreEqual("FizzBuzz", res2);
+        }
+
+        [TestMethod]
+        public void FizzBuzz42Test()
+        {
+            // Arrange
+            var p = new Program();
+
+            // Act
             var res4 = p.FizzBuzz(42);
 
-            var res5 = p.FizzBuzz(18);
-            var res6 = p.FizzBuzz(25);
-            var res7 = p.FizzBuzz(90);
-            var res8 = p.FizzBuzz(84);
-
-            //Assert
-            Assert.AreEqual("Fizz", res1);
-            Assert.AreEqual("Buzz", res2);
-            Assert.AreEqual("FizzBuzz", res3);
+            // Assert
             Assert.AreEqual("Answer to the Ultimate Question of Life, the Universe, and Everything", res4);
-
-            Assert.AreEqual("Fizz", res5);
-            Assert.AreEqual("Buzz", res6);
-            Assert.AreEqual("FizzBuzz", res7);
-            Assert.AreNotEqual("Answer to the Ultimate Question of Life, the Universe, and Everything", res8);
         }
     }
 }
