@@ -9,7 +9,7 @@ namespace FizzBuzzLab
         {
             var p = new Program();
 
-            foreach (var n in Enumerable.Range(1, 200))
+            foreach (var n in Enumerable.Range(1, 300))
                 Console.WriteLine(p.FizzBuzz(n));
         }
         private bool Mod0(int a, int b) => a % b == 0;
