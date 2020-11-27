@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FizzBuzzLab;
+using System;
 
 namespace FizzBuzzTest
 {
@@ -82,6 +83,17 @@ namespace FizzBuzzTest
             // Assert
             Assert.AreEqual("Answer to the Ultimate Question of Life, the Universe, and Everything", res1);
             Assert.AreNotEqual("Answer to the Ultimate Question of Life, the Universe, and Everything", res2);
+        }
+
+        [TestMethod]
+        public void LooperTest()
+        {
+            var p = new Program();
+            var res1 = p.Looper(3);
+
+            string expected = String.Join(Environment.NewLine, new[] { "1", "2", "Fizz" });
+
+            Assert.AreEqual(expected, res1);
         }
     }
 }

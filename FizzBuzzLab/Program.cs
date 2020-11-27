@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 
 namespace FizzBuzzLab
 {
@@ -9,8 +10,13 @@ namespace FizzBuzzLab
         {
             var p = new Program();
 
-            foreach (var n in Enumerable.Range(1, 300))
-                Console.WriteLine(p.FizzBuzz(n));
+            Console.WriteLine(p.Looper(300));
+        }
+
+        public string Looper(int max)
+        {
+            return String.Join(Environment.NewLine, 
+                Enumerable.Range(1, max).Select(n => FizzBuzz(n)).ToArray());
         }
         private bool Mod0(int a, int b) => a % b == 0;
         public string Answer = "Answer to the Ultimate Question of Life, the Universe, and Everything";
