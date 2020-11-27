@@ -89,11 +89,14 @@ namespace FizzBuzzTest
         public void LooperTest()
         {
             var p = new Program();
-            var res1 = p.Looper(3);
+            var actual = p.Looper(3);
 
-            string expected = String.Join(Environment.NewLine, new[] { "1", "2", "Fizz" });
+            string expected = string.Join(Environment.NewLine, new[] { "1", "2", "Fizz" });
+            string crashAndBurn = string.Join(Environment.NewLine, new[] { "0", "1", "2", "Fizz" });
 
-            Assert.AreEqual(expected, res1);
+            Assert.AreEqual(expected, actual);
+            Assert.AreNotEqual(crashAndBurn, actual);
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => p.Looper(-420));
         }
     }
 }
